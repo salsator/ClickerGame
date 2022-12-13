@@ -25,4 +25,11 @@ class DaysThread {
 
 
 
+
+    fun addUpGolds()
+    {
+
+    }
+
+
 }

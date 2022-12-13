@@ -9,7 +9,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
 
-    val tabTitle = arrayOf("výprava","obchod","Vylepšeni")
+    val tabTitle = arrayOf("Výprava","Obchod","Vylepšeni")
 
 
 
