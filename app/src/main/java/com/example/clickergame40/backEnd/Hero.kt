@@ -4,7 +4,7 @@ import kotlin.math.pow
 
 class Hero( priceHero: Long, modificatorCost: Float, incomeHero: Long) {
 
-    private var _heroCount : Int =0
+    private var heroCount : Int =0
     private var _priceHero = priceHero
     private var _heroIncome = incomeHero
     private val _modifikatorCeny = modificatorCost
@@ -16,30 +16,30 @@ class Hero( priceHero: Long, modificatorCost: Float, incomeHero: Long) {
     }
 
     fun getHeroCount(): Int {
-        return _heroCount
+        return heroCount
     }
 
 
     fun getHeroIncome() :Long
     {
-        return (_heroIncome* _heroCount)
+        return (_heroIncome* heroCount)
     }
 
     private fun changePrice()
     {
-        _priceHero += ((_basicCost *(_modifikatorCeny.pow(_heroCount)))-_basicCost).toInt()
+        _priceHero += ((_basicCost *(_modifikatorCeny.pow(heroCount)))-_basicCost).toInt()
     }
 
     fun buyHero()
     {
-        _heroCount += 1
+        heroCount += 1
         changePrice()
     }
 
 
     fun resetHero()
     {
-        _heroCount = 0
+        heroCount = 0
         changePrice()
     }
 
