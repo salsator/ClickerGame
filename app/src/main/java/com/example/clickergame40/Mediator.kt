@@ -2,8 +2,15 @@ package com.example.clickergame40
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.clickergame40.backEnd.DaysThread
 
 class Mediator {
+
+    companion object {
+        fun newInstance() = Mediator()
+    }
+
+    private val daysThread = DaysThread()
 
     private val _golds = MutableLiveData<Long>(0)
     val golds: LiveData<Long> = _golds
@@ -20,7 +27,9 @@ class Mediator {
         _golds.value?.plus(numberGolds)
     }
 
-    fun getGolds() : Long
+
+
+   private fun getGolds() : Long
     {
         var gold = golds.value
         if(gold == null)
@@ -33,13 +42,11 @@ class Mediator {
 
     fun buy(price : Long) : Boolean
     {
-        if (getGolds() > price)
-        {
+        return if (getGolds() > price) {
             golds.value?.minus(price)
-            return true
-        }
-        else {
-            return false
+            true
+        } else {
+            false
         }
     }
 
