@@ -4,21 +4,20 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.clickergame40.backEnd.DaysThread
 
-class Mediator {
+object Mediator {
 
-    companion object {
+   /* companion object {
         fun newInstance() = Mediator()
-    }
-
+    }*/
     private val daysThread = DaysThread()
 
-    private val _golds = MutableLiveData<Long>(0)
+    private val _golds = MutableLiveData<Long>(10)
     val golds: LiveData<Long> = _golds
 
-    private val _income = MutableLiveData<Long>(0)
+    private val _income = MutableLiveData<Long>(9)
     val income: LiveData<Long> = _income
 
-    private val _days = MutableLiveData<Long>(0)
+    private val _days = MutableLiveData<Long>(500)
     val days: LiveData<Long> = _days
 
 

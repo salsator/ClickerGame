@@ -1,15 +1,15 @@
 package com.example.clickergame40.backEnd
 
+import com.example.clickergame40.Mediator
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-class DaysThread {
+class DaysThread() {
 
     val heroes = Heroes()
     val upgrade = Upgrade()
-
-
+    val mediator = Mediator
 
 
 
@@ -18,7 +18,7 @@ class DaysThread {
         {
             launch {
                 delay(3000L)
-                TODO("dodělat aktualizaci denní doby v UI, progress bar")
+                addUpGolds()
             }
         }
     }
@@ -28,7 +28,9 @@ class DaysThread {
 
     fun addUpGolds()
     {
-
+       val gold = 10
+           //heroes.getAllIncome() * upgrade.getModIncome()
+        mediator.golds.value?.plus(gold)
     }
 
 
