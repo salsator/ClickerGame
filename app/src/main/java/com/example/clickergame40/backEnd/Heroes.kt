@@ -52,12 +52,14 @@ class Heroes {
     }
 
 
-    fun buyHero(cislo:Int) {
+    fun buyHero(number:Int)
+    {
+            arrayOfHero[number].buyHero()
+    }
 
-        if (Mediator.buy(arrayOfHero[cislo].getPriceForHero())) {
-            arrayOfHero[cislo].buyHero()
-        }
-
+    fun getHeroCost(number:Int) : Long
+    {
+       return arrayOfHero[number].getPriceForHero()
     }
 
 

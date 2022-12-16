@@ -4,14 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.clickergame40.backEnd.DaysThread
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 
-object Mediator: ViewModel() {
+object Mediator {
 
 
     private val daysThread = DaysThread()
-    var gold: Long = 10
 
 
     private val _golds = MutableLiveData<Long>(0)
@@ -24,18 +21,7 @@ object Mediator: ViewModel() {
     val days: LiveData<Long> = _days
 
 
-    fun addGolds(numberGolds: Long)
-    {
-        var gold = getGolds()
-        gold += numberGolds
-        _golds.postValue(gold)
-        //_golds.value?.plus(numberGolds)
-    }
-
-
-
-
-   private fun getGolds() : Long
+    private fun getGolds() : Long
     {
         var gold = golds.value
         if(gold == null)
@@ -45,11 +31,26 @@ object Mediator: ViewModel() {
         return gold
     }
 
+    fun plusGolds(numberGolds: Long)
+    {
+        var gold = getGolds()
+        gold += numberGolds
+        _golds.postValue(gold)
+        //_golds.value?.plus(numberGolds)
+    }
+
+    fun minusGolds(numberGolds: Long)
+    {
+        var gold = getGolds()
+        gold -= numberGolds
+        _golds.postValue(gold)
+    }
+
 
     fun buy(price : Long) : Boolean
     {
         return if (getGolds() > price) {
-            golds.value?.minus(price)
+           minusGolds(price)
             true
         } else {
             false
@@ -63,17 +64,21 @@ object Mediator: ViewModel() {
         }
     }*/
 
-    fun buyHero(cislo:Int,)
+    fun buyHero(cislo:Int)
     {
-        TODO("dořešit kupování hrdinů")
+       val price  = daysThread.heroes.getHeroCost(cislo)
+
+        if (buy(price))
+        {
+            daysThread.heroes.buyHero(cislo)
+        }
+
     }
 
     fun click()
     {
         val gold : Long = 1 + daysThread.heroes.getAllHeroes().toLong()
-
-        //golds.value = gold)
-        addGolds(gold)
+        plusGolds(gold)
     }
 
 }

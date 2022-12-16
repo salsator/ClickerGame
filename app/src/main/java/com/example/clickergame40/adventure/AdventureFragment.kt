@@ -43,7 +43,7 @@ class AdventureFragment : Fragment() {
         super.onResume()
 
         binding.clickBtn.setOnClickListener {
-            Mediator.click()
+           viewModel.click()
         }
 
         }

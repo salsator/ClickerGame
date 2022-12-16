@@ -1,13 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conLauyot2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".shop.ShopFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
 
-</FrameLayout>
+
+    <TextView
+android:id="@+id/priceFarmerTxt"
+android:layout_width="0dp"
+android:layout_height="0dp"
+android:layout_marginStart="5dp"
+android:text="Cena: 10"
+android:textSize="20sp"
+app:layout_constraintHeight_percent="0.15"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buyFarmerBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup farmáře"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/priceFighterTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="Cena: 200"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceFarmerTxt"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buyFighterBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup Bojovníka"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/buyFarmerBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/priceRogueTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="Cena: 1200"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceFighterTxt"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buyRogueBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup Zloděje"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/buyFighterBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+
+    <TextView
+        android:id="@+id/priceWizardTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="Cena: 14400"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceRogueTxt"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buyWizardBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup Kouzelníka"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/buyRogueBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/priceChampionTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="Cena: 100000"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceWizardTxt"
+        app:layout_constraintWidth_percent="0.4" />
+
+    <Button
+        android:id="@+id/buyChampionBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup Championa"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/buyWizardBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <Button
+        android:id="@+id/buyGodBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Kup Boha"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/buyChampionBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/priceGodTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:text="Cena: 999999999"
+        android:textSize="20sp"
+        android:visibility="visible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceChampionTxt"
+        app:layout_constraintWidth_percent="0.4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
