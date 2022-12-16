@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.clickergame40.databinding.ActivityGameBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
+
 class GameActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGameBinding
 
@@ -22,7 +23,7 @@ class GameActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
+        // Mediator.start()
 
         /// TabLayout deklarace a propojení
         val pager = binding.viewPager
@@ -34,16 +35,16 @@ class GameActivity : AppCompatActivity() {
             tab.text = tabTitle[position]
         }.attach()
 
-
+        // ViewModel deklarace
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.NewInstanceFactory()
         ).get(GameActivityViewModel::class.java)
 
 
-        viewModel.mediator.golds.observe(this, Observer {
-            binding.goldsTxt.text = it.toString()
-        })
+      viewModel.mediator.golds.observe(this) {
+           binding.goldsTxt.text = it.toString()
+       }
         viewModel.mediator.income.observe(this, Observer {
             binding.IncomeTxt.text = it.toString()
         })
@@ -53,4 +54,21 @@ class GameActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        val goldsObserver = Observer<Long> { golds ->
+            binding.goldsTxt.text = golds.toString()
+
+        }
+
+
+        Mediator.golds.observe(this,goldsObserver )
+    }
+
 }
+
+/*Mediator.golds.observe(this, Observer {
+    binding.IncomeTxt.text = it.toString()
+})*/

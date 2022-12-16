@@ -19,6 +19,7 @@ class DaysThread() {
             launch {
                 delay(3000L)
                 addUpGolds()
+                TODO("dořešit zpuštění vlákna po spuštění game aktivity")
             }
         }
     }

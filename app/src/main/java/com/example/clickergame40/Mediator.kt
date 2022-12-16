@@ -2,29 +2,36 @@ package com.example.clickergame40
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.clickergame40.backEnd.DaysThread
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
-object Mediator {
+object Mediator: ViewModel() {
 
-   /* companion object {
-        fun newInstance() = Mediator()
-    }*/
+
     private val daysThread = DaysThread()
+    var gold: Long = 10
 
-    private val _golds = MutableLiveData<Long>(10)
+
+    private val _golds = MutableLiveData<Long>(0)
     val golds: LiveData<Long> = _golds
 
-    private val _income = MutableLiveData<Long>(9)
+    private val _income = MutableLiveData<Long>(0)
     val income: LiveData<Long> = _income
 
-    private val _days = MutableLiveData<Long>(500)
+    private val _days = MutableLiveData<Long>(0)
     val days: LiveData<Long> = _days
 
 
     fun addGolds(numberGolds: Long)
     {
-        _golds.value?.plus(numberGolds)
+        var gold = getGolds()
+        gold += numberGolds
+        _golds.postValue(gold)
+        //_golds.value?.plus(numberGolds)
     }
+
 
 
 
@@ -47,6 +54,26 @@ object Mediator {
         } else {
             false
         }
+    }
+
+  /*  fun start()
+    {
+        runBlocking { // this: CoroutineScope
+            launch { daysThread.doDays() }
+        }
+    }*/
+
+    fun buyHero(cislo:Int,)
+    {
+        TODO("dořešit kupování hrdinů")
+    }
+
+    fun click()
+    {
+        val gold : Long = 1 + daysThread.heroes.getAllHeroes().toLong()
+
+        //golds.value = gold)
+        addGolds(gold)
     }
 
 }

@@ -1,5 +1,7 @@
 package com.example.clickergame40.backEnd
 
+import com.example.clickergame40.Mediator
+
 class Heroes {
 
     private  val farmer = Hero(10, 1.07F, 1)
@@ -51,10 +53,10 @@ class Heroes {
 
 
     fun buyHero(cislo:Int) {
-     /*
-        if (mainViewModel.buy(arrayOfHero[cislo].getPriceForHero())) {
+
+        if (Mediator.buy(arrayOfHero[cislo].getPriceForHero())) {
             arrayOfHero[cislo].buyHero()
-        }*/
+        }
 
     }
 
