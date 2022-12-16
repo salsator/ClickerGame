@@ -81,4 +81,8 @@ object Mediator {
         plusGolds(gold)
     }
 
+    fun start()
+    {
+        daysThread.heroes.fillArray()
+    }
 }

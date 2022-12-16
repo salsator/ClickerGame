@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.clickergame40.R
+import com.example.clickergame40.Mediator
 import com.example.clickergame40.databinding.FragmentShopBinding
 
 class ShopFragment : Fragment() {
@@ -33,8 +33,8 @@ class ShopFragment : Fragment() {
         viewModel = ViewModelProvider(
             this,
             ViewModelProvider.NewInstanceFactory()
-        ).get(ShopViewModel::class.java)
-        // TODO: Use the ViewModel
+        )[ShopViewModel::class.java]
+
     }
 
 
@@ -43,10 +43,10 @@ class ShopFragment : Fragment() {
         super.onResume()
 
         binding.buyFarmerBtn.setOnClickListener {
-            viewModel.buyHeroes(0, binding.buyFarmerBtn, binding.priceFarmerTxt)
+            viewModel.buyHeroes(0, /*binding.buyFarmerBtn, binding.priceFarmerTxt*/)
            // zobrazTlacitka(0, binding.nakupKozihoBojovnikaBtn, binding.cenaKozihoBojovnikaTxt,binding.koziBojovnikImg)
         }
-        binding.buyFighterBtn.setOnClickListener {
+     /*  binding.buyFighterBtn.setOnClickListener {
             viewModel.buyHeroes(1, binding.buyFighterBtn, binding.priceFighterTxt)
             //zobrazTlacitka(1, binding.nakupKozihoCarodejeBtn,binding.cenaKozihoCarodejeTxt,binding.koziCarodejImg)
         }
@@ -65,7 +65,7 @@ class ShopFragment : Fragment() {
         binding.buyGodBtn.setOnClickListener {
             viewModel.buyHeroes(5,binding.buyGodBtn,binding.priceGodTxt)
 
-        }
+        }*/
 
     }
 

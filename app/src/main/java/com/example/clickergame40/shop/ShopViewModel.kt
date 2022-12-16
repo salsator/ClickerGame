@@ -9,9 +9,11 @@ import com.example.clickergame40.Mediator
 class ShopViewModel : ViewModel() {
 
 
-    fun buyHeroes(numberHero: Int,button: Button,textView: TextView )
+    fun buyHeroes(numberHero: Int,/*button: Button,textView: TextView*/ )
     {
         Mediator.buyHero(numberHero)
+       //button.text = "${Mediator.}"
+
         TODO("dodělej vykreslování textu na tlačítku ")
     }
 

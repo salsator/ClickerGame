@@ -23,7 +23,7 @@ class GameActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Mediator.start()
+         Mediator.start()
 
         /// TabLayout deklarace a propojení
         val pager = binding.viewPager
