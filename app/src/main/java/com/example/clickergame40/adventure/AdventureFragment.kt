@@ -31,10 +31,7 @@ class AdventureFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(
-            this,
-            ViewModelProvider.NewInstanceFactory()
-        ).get(AdventureViewModel::class.java)
+        viewModel = ViewModelProvider(this)[AdventureViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

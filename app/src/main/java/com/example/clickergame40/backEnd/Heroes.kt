@@ -62,7 +62,17 @@ class Heroes {
        return arrayOfHero[number].getPriceForHero()
     }
 
+    fun getHeroIncome(number: Int) : String
+    {
+        val income : Long = arrayOfHero[number].getHeroIncome()
 
+        return income.toString()
+    }
 
+    fun getHeroCount(number: Int) : String
+    {
+        val count : Int = arrayOfHero[number].getHeroCount()
+        return count.toString()
+    }
 
 }

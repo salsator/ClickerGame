@@ -2,7 +2,6 @@ package com.example.clickergame40
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import com.example.clickergame40.backEnd.DaysThread
 
 object Mediator {
@@ -84,5 +83,19 @@ object Mediator {
     fun start()
     {
         daysThread.heroes.fillArray()
+    }
+
+    fun getIncomeHero(numberHero: Int): String {
+
+        return daysThread.heroes.getHeroIncome(numberHero)
+    }
+
+    fun getCountHero(numberHero: Int): String {
+        return daysThread.heroes.getHeroCount(numberHero)
+    }
+
+    fun getPriceForHero(numberHero: Int) : String
+    {
+        return daysThread.heroes.getHeroCost(numberHero).toString()
     }
 }

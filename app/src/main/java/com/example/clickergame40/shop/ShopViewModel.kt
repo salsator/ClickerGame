@@ -9,13 +9,28 @@ import com.example.clickergame40.Mediator
 class ShopViewModel : ViewModel() {
 
 
-    fun buyHeroes(numberHero: Int,/*button: Button,textView: TextView*/ )
+    fun buyHeroes(numberHero: Int, button: Button,textView: TextView )
     {
         Mediator.buyHero(numberHero)
-       //button.text = "${Mediator.}"
+       button.text = getBtnString(numberHero)
+        textView.text = getTxtString(numberHero)
 
-        TODO("dodělej vykreslování textu na tlačítku ")
     }
 
+    private fun getBtnString(number: Int) : String
+    {
+        val priceHero = Mediator.getPriceForHero(number)
+
+        return "Cena: ${System.lineSeparator()} $priceHero"
+
+    }
+
+    private fun getTxtString(number: Int) : String
+    {
+        val incomeHero: String = Mediator.getIncomeHero(number)
+        val countHero: String = Mediator.getCountHero(number)
+
+        return "výdělek: $incomeHero ${System.lineSeparator()} lvl hrdiny: $countHero"
+    }
 
 }
