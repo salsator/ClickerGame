@@ -1,9 +1,8 @@
 package com.example.clickergame40.backEnd
 
+import android.util.Log
 import com.example.clickergame40.Mediator
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 class DaysThread() {
 
@@ -11,9 +10,31 @@ class DaysThread() {
     val upgrade = Upgrade()
     val mediator = Mediator
 
+    init {
+    GlobalScope.launch {
+        try
+        {
+            coroutineScope {
+                repeat(500)
+                {
+                    launch {
+                        delay(3000L)
+                        addUpGolds()
 
+                    }
+                }
+            }
 
-    suspend fun doDays() = runBlocking {
+        }
+        catch (e: Exception)
+        {
+            Log.e("coroutines error", "e.message")
+        }
+    }
+
+    }
+
+    suspend fun doDays() = coroutineScope {
         repeat(500)
         {
             launch {
@@ -26,13 +47,16 @@ class DaysThread() {
 
 
 
+    private fun getAllIncome() : Long
+    {
+     return heroes.getAllHeroes() * upgrade.getModIncome().toLong()
+    }
 
     fun addUpGolds()
     {
-       val gold = 10
-           //heroes.getAllIncome() * upgrade.getModIncome()
-        mediator.golds.value?.plus(gold)
+     mediator.plusGolds(getAllIncome())
     }
 
 
 }
+

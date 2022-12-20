@@ -13,6 +13,9 @@ class Heroes {
 
     var arrayOfHero = listOf<Hero>()
 
+    init {
+        fillArray()
+    }
 
     fun fillArray()
     {

@@ -19,6 +19,17 @@ object Mediator {
     private val _days = MutableLiveData<Long>(0)
     val days: LiveData<Long> = _days
 
+    fun minusDays()
+    {
+        var days = days.value
+        if(days == null)
+        {
+            days =0
+        }
+        days--
+        _days.postValue(days!!)
+
+    }
 
     private fun getGolds() : Long
     {
@@ -29,6 +40,7 @@ object Mediator {
         }
         return gold
     }
+
 
     fun plusGolds(numberGolds: Long)
     {
@@ -83,6 +95,8 @@ object Mediator {
     fun start()
     {
         daysThread.heroes.fillArray()
+
+
     }
 
     fun getIncomeHero(numberHero: Int): String {

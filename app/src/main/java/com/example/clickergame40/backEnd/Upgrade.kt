@@ -17,6 +17,8 @@ class Upgrade {
     private var countBonusClick =0
 
 
+
+
     // methods Modifier
 
     fun getModIncome() : Float
