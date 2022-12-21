@@ -1,8 +1,11 @@
 package com.example.clickergame40
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.clickergame40.backEnd.DaysThread
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 object Mediator {
 
@@ -16,19 +19,37 @@ object Mediator {
     private val _income = MutableLiveData<Long>(0)
     val income: LiveData<Long> = _income
 
-    private val _days = MutableLiveData<Long>(0)
-    val days: LiveData<Long> = _days
+    private val _days = MutableLiveData<Int>(300)
+    val days: LiveData<Int> = _days
+
+    private val _cycle = MutableLiveData<Int>(0)
+    val cycle: LiveData<Int> = _cycle
+
+
+    fun changeCycle(value: Int)
+    {
+        _cycle.postValue(value)
+    }
 
     fun minusDays()
+    {
+        var days = getDays()
+        days--
+        _days.postValue(days)
+
+    }
+    fun getDays() : Int
     {
         var days = days.value
         if(days == null)
         {
-            days =0
+            days = 0
         }
-        days--
-        _days.postValue(days!!)
-
+        return days
+    }
+    fun addIncome()
+    {
+        _income.postValue(daysThread.getAllIncome())
     }
 
     private fun getGolds() : Long
@@ -68,12 +89,7 @@ object Mediator {
         }
     }
 
-  /*  fun start()
-    {
-        runBlocking { // this: CoroutineScope
-            launch { daysThread.doDays() }
-        }
-    }*/
+
 
     fun buyHero(cislo:Int)
     {
@@ -82,6 +98,7 @@ object Mediator {
         if (buy(price))
         {
             daysThread.heroes.buyHero(cislo)
+            addIncome()
         }
 
     }
@@ -94,8 +111,9 @@ object Mediator {
 
     fun start()
     {
-        daysThread.heroes.fillArray()
 
+
+        daysThread.start()
 
     }
 
@@ -112,4 +130,10 @@ object Mediator {
     {
         return daysThread.heroes.getHeroCost(numberHero).toString()
     }
+
+
+
+
+
 }
+

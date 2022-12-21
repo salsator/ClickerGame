@@ -23,7 +23,9 @@ class GameActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        // Mediator.start()
+         Mediator.start()
+
+        binding.vyhraSilaBar.max = 99
 
         /// TabLayout deklarace a propojení
         val pager = binding.viewPager
@@ -52,19 +54,15 @@ class GameActivity : AppCompatActivity() {
             binding.dayTxt.text = it.toString()
         })
 
-
+        viewModel.mediator.cycle.observe(this, Observer {
+            binding.vyhraSilaBar.setProgress(it)
+        })
     }
 
     override fun onResume() {
         super.onResume()
 
-        val goldsObserver = Observer<Long> { golds ->
-            binding.goldsTxt.text = golds.toString()
 
-        }
-
-
-        Mediator.golds.observe(this,goldsObserver )
     }
 
 }
