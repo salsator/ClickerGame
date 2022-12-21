@@ -45,27 +45,21 @@ class ShopFragment : Fragment() {
 
         binding.buyFarmerBtn.setOnClickListener {
             viewModel.buyHeroes(0, binding.buyFarmerBtn, binding.priceFarmerTxt)
-           // zobrazTlacitka(0, binding.nakupKozihoBojovnikaBtn, binding.cenaKozihoBojovnikaTxt,binding.koziBojovnikImg)
         }
        binding.buyFighterBtn.setOnClickListener {
             viewModel.buyHeroes(1, binding.buyFighterBtn, binding.priceFighterTxt)
-            //zobrazTlacitka(1, binding.nakupKozihoCarodejeBtn,binding.cenaKozihoCarodejeTxt,binding.koziCarodejImg)
         }
         binding.buyRogueBtn.setOnClickListener {
             viewModel.buyHeroes(2,binding.buyRogueBtn,binding.priceRogueTxt)
-            //zobrazTlacitka(2, binding.nakupKozihoZlodejeBtn,binding.cenaKozihoZlodejeTxt,binding.koziZlodejImg)
         }
         binding.buyWizardBtn.setOnClickListener {
             viewModel.buyHeroes(3,binding.buyWizardBtn,binding.priceWizardTxt)
-           // zobrazTlacitka(3, binding.nakupKozihoChampionaBtn,binding.cenaKozihoChampionaTxt,binding.koziZlodejImg)
         }
         binding.buyChampionBtn.setOnClickListener {
             viewModel.buyHeroes(4,binding.buyChampionBtn,binding.priceChampionTxt)
-           // zobrazTlacitka(4, binding.nakupKozihoBohaBtn,binding.cenaKozihoBohaTxt,binding.koziZlodejImg)
         }
         binding.buyGodBtn.setOnClickListener {
             viewModel.buyHeroes(5,binding.buyGodBtn,binding.priceGodTxt)
-
         }
 
     }

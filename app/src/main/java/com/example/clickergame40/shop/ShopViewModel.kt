@@ -12,7 +12,7 @@ class ShopViewModel : ViewModel() {
     fun buyHeroes(numberHero: Int, button: Button,textView: TextView )
     {
         Mediator.buyHero(numberHero)
-       button.text = getBtnString(numberHero)
+         button.text = getBtnString(numberHero)
         textView.text = getTxtString(numberHero)
 
     }

@@ -33,7 +33,7 @@ class DaysThread() : Thread() {
 
      fun getAllIncome() : Long
     {
-     return heroes.getAllHeroes() * upgrade.getModIncome().toLong()
+     return heroes.getAllIncome() * upgrade.getModIncome().toLong()
     }
 
     fun addUpGolds()

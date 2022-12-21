@@ -32,7 +32,10 @@ class Upgrade {
         priceMod = (priceMod * 2.0F.pow(1+countMod)).toLong()
         countMod++
     }
-
+    fun getPriceMod() : Long
+    {
+        return priceMod
+    }
 
     // methods click bonus
 
@@ -48,6 +51,10 @@ class Upgrade {
         countBonusClick++
     }
 
+    fun getPriceClick() : Long
+    {
+        return priceBonusClick
+    }
 
     fun resetUpgrade()
     {

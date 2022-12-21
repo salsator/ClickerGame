@@ -1,11 +1,10 @@
 package com.example.clickergame40
 
-import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.clickergame40.backEnd.DaysThread
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+
 
 object Mediator {
 
@@ -13,7 +12,7 @@ object Mediator {
     private val daysThread = DaysThread()
 
 
-    private val _golds = MutableLiveData<Long>(0)
+    private val _golds = MutableLiveData<Long>(50000)
     val golds: LiveData<Long> = _golds
 
     private val _income = MutableLiveData<Long>(0)
@@ -131,8 +130,40 @@ object Mediator {
         return daysThread.heroes.getHeroCost(numberHero).toString()
     }
 
+    fun getPriceForModBonus() : String
+    {
+        return daysThread.upgrade.getPriceMod().toString()
+    }
+    fun getPriceForBonusClick() : String
+    {
+        return daysThread.upgrade.getPriceClick().toString()
+    }
+
+    fun getModBonus() : String
+    {
+        return daysThread.upgrade.getModIncome().toString()
+    }
+    fun getClickBonus(): String
+    {
+        return daysThread.upgrade.getBonusClick().toString()
+    }
 
 
+    fun buyClickBonus()
+    {
+        if (buy(daysThread.upgrade.getPriceClick()))
+        {
+            daysThread.upgrade.increaseBonusClick()
+        }
+    }
+
+    fun buyModBonus()
+    {
+        if (buy(daysThread.upgrade.getPriceMod()))
+        {
+            daysThread.upgrade.increaseMod()
+        }
+    }
 
 
 }
