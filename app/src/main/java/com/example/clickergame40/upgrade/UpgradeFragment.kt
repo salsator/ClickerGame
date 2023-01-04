@@ -8,10 +8,12 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.clickergame40.ClickingWarActivity
 import com.example.clickergame40.GameActivity
 import com.example.clickergame40.MainActivity
+import com.example.clickergame40.ScoreActivity
 import com.example.clickergame40.databinding.FragmentUpgradeBinding
-import com.example.clickergame40.warClicking.ClickingWar
+
 
 class UpgradeFragment : Fragment() {
 
@@ -55,7 +57,7 @@ class UpgradeFragment : Fragment() {
 
         binding.StartWarBtn.setOnClickListener {
            // viewModel.startWar()
-            val intent = Intent (getActivity(), ClickingWar::class.java)
+            val intent = Intent (getActivity(), ScoreActivity::class.java)
             getActivity()?.startActivity(intent)
         }
 

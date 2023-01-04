@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
 import com.example.clickergame40.GameActivity
 import com.example.clickergame40.Mediator
-import com.example.clickergame40.warClicking.ClickingWar
 import kotlinx.coroutines.flow.combine
 
 class UpgradeViewModel : ViewModel() {
@@ -63,10 +62,6 @@ class UpgradeViewModel : ViewModel() {
         textView.text = text
     }
 
-    fun startWar()
-    {
-
-    }
 
     fun resetWorld()
     {
