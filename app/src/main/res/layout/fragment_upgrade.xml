@@ -18,7 +18,7 @@
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintWidth_percent="0.65" />
 
     <TextView
         android:id="@+id/ModBonusTxt"
@@ -30,7 +30,7 @@
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clickBonusTxt"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintWidth_percent="0.65" />
 
     <Button
         android:id="@+id/clickBonusBtn"
@@ -51,4 +51,49 @@
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/clickBonusBtn"
         app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/resetWorldTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:text="postup do névého věku"
+        android:textSize="20sp"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ModBonusTxt"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <Button
+        android:id="@+id/resetWorldBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="nový věk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/modBonusBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
+    <TextView
+        android:id="@+id/StartWarTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:text="přivolej Tiamat a začni bitvu"
+        android:textSize="20sp"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetWorldTxt"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <Button
+        android:id="@+id/StartWarBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="začni bitvu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintTop_toBottomOf="@+id/resetWorldBtn"
+        app:layout_constraintWidth_percent="0.3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

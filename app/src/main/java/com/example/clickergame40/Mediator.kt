@@ -104,17 +104,11 @@ object Mediator {
 
     fun click()
     {
-        val gold : Long = 1 + daysThread.heroes.getAllHeroes().toLong()
+        val gold : Long = 1 + daysThread.heroes.getAllHeroes().toLong() + daysThread.upgrade.getBonusClick()
         plusGolds(gold)
     }
 
-    fun start()
-    {
 
-
-        daysThread.start()
-
-    }
 
     fun getIncomeHero(numberHero: Int): String {
 

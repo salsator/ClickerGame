@@ -1,11 +1,14 @@
 package com.example.clickergame40
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.clickergame40.databinding.ActivityGameBinding
+import com.example.clickergame40.warClicking.ClickingWar
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -23,7 +26,7 @@ class GameActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-         Mediator.start()
+
 
         binding.vyhraSilaBar.max = 99
 
@@ -63,7 +66,10 @@ class GameActivity : AppCompatActivity() {
         super.onResume()
 
 
+
+
     }
+
 
 }
 

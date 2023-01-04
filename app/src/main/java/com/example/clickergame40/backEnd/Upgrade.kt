@@ -11,7 +11,7 @@ class Upgrade {
     private var countMod  = 0
 
     // inceremntation click bonus
-    private var bonusClick = 1
+    private var bonusClick = 100
     private var priceBonusClick : Long = 1000
     private var basePriceBonusClick : Long = 1000
     private var countBonusClick =0

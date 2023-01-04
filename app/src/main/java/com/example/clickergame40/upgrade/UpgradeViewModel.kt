@@ -1,10 +1,14 @@
 package com.example.clickergame40.upgrade
 
 
+import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
+import com.example.clickergame40.GameActivity
 import com.example.clickergame40.Mediator
+import com.example.clickergame40.warClicking.ClickingWar
 import kotlinx.coroutines.flow.combine
 
 class UpgradeViewModel : ViewModel() {
@@ -57,6 +61,16 @@ class UpgradeViewModel : ViewModel() {
             text = "bonus k výdělku:${System.lineSeparator()}$value"
         }
         textView.text = text
+    }
+
+    fun startWar()
+    {
+
+    }
+
+    fun resetWorld()
+    {
+
     }
 
 }
