@@ -4,12 +4,12 @@ import com.example.clickergame40.Mediator
 
 class Heroes {
 
-    private  val farmer = Hero(10, 1.07F, 1)
-    private  val fighter = Hero(300, 1.15F, 25)
-    private  val rogue = Hero(2200, 1.14F, 100)
-    private  val wizard = Hero(20000, 1.13F, 450)
-    private  val champion = Hero(100000, 1.12F, 5000)
-    private  val god = Hero(999999999, 100.0F, 50000)
+    private  val farmer = Hero(10, 1.07F, 2, "Farmář")
+    private  val fighter = Hero(300, 1.15F, 50, "Bojovník")
+    private  val rogue = Hero(2200, 1.14F, 200, "Zloděj")
+    private  val wizard = Hero(20000, 1.13F, 850, "Kouzelnik")
+    private  val champion = Hero(100000, 1.12F, 10000, "Paladin")
+    private  val god = Hero(9999999, 100.0F, 100000, "Božstvo")
 
     var arrayOfHero = listOf<Hero>()
 
@@ -76,6 +76,11 @@ class Heroes {
     {
         val count : Int = arrayOfHero[number].getHeroCount()
         return count.toString()
+    }
+
+    fun getNameHero(number: Int) : String
+    {
+        return arrayOfHero[number].getName()
     }
 
 }

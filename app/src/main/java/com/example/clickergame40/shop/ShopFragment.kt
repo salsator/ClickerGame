@@ -36,12 +36,17 @@ class ShopFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this)[ShopViewModel::class.java]
 
+
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+    }
 
     override fun onResume() {
         super.onResume()
+
 
         binding.buyFarmerBtn.setOnClickListener {
             viewModel.buyHeroes(0, binding.buyFarmerBtn, binding.priceFarmerTxt)

@@ -65,7 +65,7 @@ class UpgradeViewModel : ViewModel() {
 
     fun resetWorld()
     {
-
+        Mediator.resetWorld()
     }
 
 }

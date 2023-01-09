@@ -2,14 +2,14 @@ package com.example.clickergame40.backEnd
 
 import kotlin.math.pow
 
-class Hero( priceHero: Long, modificatorCost: Float, incomeHero: Long) {
+class Hero( priceHero: Long, modificatorCost: Float, incomeHero: Long, name : String) {
 
     private var heroCount : Int =0
     private var _priceHero = priceHero
     private var _heroIncome = incomeHero
     private val _modifikatorCeny = modificatorCost
     private val _basicCost = priceHero
-
+    private val _name = name
 
     fun getPriceForHero(): Long {
         return _priceHero
@@ -43,5 +43,8 @@ class Hero( priceHero: Long, modificatorCost: Float, incomeHero: Long) {
         changePrice()
     }
 
-
+    fun getName():String
+    {
+        return _name
+    }
 }

@@ -16,26 +16,27 @@ class Upgrade {
     private var basePriceBonusClick : Long = 1000
     private var countBonusClick =0
 
-
+    //inrementation reset bonus
+    private var resetBonus = 0
+    private var priceResetBonus: Long = 10000
+    private var countResetBonus = 0
 
 
     // methods Modifier
 
-    fun getModIncome() : Float
-    {
-        return modifierIncome
-    }
+        fun getModIncome(): Float {
+            return modifierIncome
+        }
 
-    fun increaseMod()
-    {
-        modifierIncome += 0.1F
-        priceMod = (priceMod * 2.0F.pow(1+countMod)).toLong()
-        countMod++
-    }
-    fun getPriceMod() : Long
-    {
-        return priceMod
-    }
+        fun increaseMod() {
+            modifierIncome += 0.1F
+            priceMod = (priceMod * 2.0F.pow(1 + countMod)).toLong()
+            countMod++
+        }
+
+        fun getPriceMod(): Long {
+            return priceMod
+        }
 
     // methods click bonus
 
@@ -56,6 +57,11 @@ class Upgrade {
         return priceBonusClick
     }
 
+    fun getPriceResetBonus(): Long
+    {
+        return priceResetBonus
+    }
+
     fun resetUpgrade()
     {
         modifierIncome = 1.0F
@@ -65,6 +71,7 @@ class Upgrade {
         bonusClick =1
         countBonusClick =0
         priceBonusClick = basePriceBonusClick
+
     }
 
 }

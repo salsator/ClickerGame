@@ -31,7 +31,7 @@ class DaysThread() : Thread() {
     {
         var value =0
         for (i in 0..99)
-        {delay(90L)
+        {delay(30L)
             value++
         mediator.changeCycle(value)
         }

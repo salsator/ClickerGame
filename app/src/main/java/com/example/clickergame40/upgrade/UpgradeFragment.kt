@@ -63,7 +63,13 @@ class UpgradeFragment : Fragment() {
         }
 
         binding.resetWorldBtn.setOnClickListener {
-            viewModel.resetWorld()
+            builder.setTitle("Reset World")
+                .setMessage("Chceš začít od znovu s většími bonusy? (nelze vrátit)")
+                .setCancelable(true)
+                .setPositiveButton("Ano"){DialogInterface,it -> viewModel.resetWorld()}
+                .setNegativeButton("Ne"){DialogInterface,it ->DialogInterface.cancel()}
+                .show()
+
         }
 
         binding.StartWarBtn.setOnClickListener {

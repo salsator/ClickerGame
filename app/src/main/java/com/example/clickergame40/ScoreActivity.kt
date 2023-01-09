@@ -14,8 +14,14 @@ import com.google.firebase.ktx.Firebase
 class ScoreActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
-    var userId =0
+    private lateinit var winnerListArray : ArrayList<Winner>
 
+    /*val sampleResults = listOf(
+        Winner("adam","50"),
+        Winner("Někdo druhy", "20"),
+        Winner("treti", "15"),
+
+        )*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,26 +29,24 @@ class ScoreActivity : AppCompatActivity() {
 
         database  = FirebaseDatabase.getInstance("https://clickergame4-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Winners")
 
-        uploadWinnerToDatabase(userId.toString())
-        userId++
+        uploadWinnerToDatabase()
 
-        val sampleResults = listOf(
-            Winner("adam","50"),
-            Winner("Někdo druhy", "20"),
-            Winner("treti", "15"),
+        winnerListArray = arrayListOf<Winner>()
 
-            )
+        getWinnerData()
 
 
-        val resultAdapter = ResultAdapter(sampleResults)
+
+
+        /*val resultAdapter = ResultAdapter(sampleResults)
 
         val scoreBoard: RecyclerView = findViewById(R.id.scoreList)
         scoreBoard.adapter = resultAdapter
-        scoreBoard.layoutManager = LinearLayoutManager(applicationContext)
+        scoreBoard.layoutManager = LinearLayoutManager(applicationContext)*/
 
     }
 
-    private fun uploadWinnerToDatabase(userId: String)
+    private fun uploadWinnerToDatabase()
     {
         val score = Mediator.getIncome().toString()
         val name = Mediator.getName()
@@ -50,24 +54,40 @@ class ScoreActivity : AppCompatActivity() {
 
         val winner = Winner(name,score)
 
-        database.child("Winners").push().setValue(winner).addOnFailureListener {
+        database.child(name).setValue(winner).addOnFailureListener {
             Toast.makeText(this,"neúspěšné uložení", Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun getWinner() {
-      /*  val valueEventListener = object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (ds in dataSnapshot.children) {
-                    val username = ds.child("username").getValue(String::class.java)
-                    Log.d(TAG, username)
+
+
+
+    private fun getWinnerData()
+    {
+       // database = FirebaseDatabase.getInstance().getReference("Winners")
+        database.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                if (snapshot.exists())
+                {
+                    for (winnerSnapshot in snapshot.children)
+                    {
+                        val winner = winnerSnapshot.getValue(Winner::class.java)
+                        winnerListArray.add(winner!!)
+                    }
+
+                    val resultAdapter = ResultAdapter(winnerListArray)
+
+                    val scoreBoard: RecyclerView = findViewById(R.id.scoreList)
+                    scoreBoard.adapter = resultAdapter
+                    scoreBoard.layoutManager = LinearLayoutManager(applicationContext)
                 }
             }
 
-            override fun onCancelled(databaseError: DatabaseError) {
-                Log.d(TAG, databaseError.getMessage()) //Don't ignore errors!
+            override fun onCancelled(error: DatabaseError) {
+                //TODO("Not yet implemented")
             }
-        }*/
-    }
 
+        })
+
+    }
 }

@@ -167,6 +167,21 @@ object Mediator {
         }
     }
 
+    fun resetWorld()
+    {
+       if (buy(daysThread.upgrade.getPriceResetBonus()))
+       {
+        daysThread.upgrade.resetUpgrade()
+        daysThread.heroes.resetHeroes()
+        _income.postValue(0)
+        _golds.postValue(0)
+        _days.postValue(0)
+       }
+    }
 
+    fun getHeroName(number: Int) : String
+    {
+        return daysThread.heroes.getNameHero(number)
+    }
 }
 
