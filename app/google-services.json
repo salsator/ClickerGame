@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "660850883624",
+    "project_id": "clickergame4",
+    "storage_bucket": "clickergame4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660850883624:android:df069c0ec4e0e48edfc91d",
+        "android_client_info": {
+          "package_name": "com.example.clickergame40"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660850883624-n8bmlp0snlltspshavppt9tdddp00bbi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn33QRtRJRJF-Z2NMSHoPcUkYGtivknmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "660850883624-n8bmlp0snlltspshavppt9tdddp00bbi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

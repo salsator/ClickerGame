@@ -2,6 +2,11 @@
     <string name="app_name">ClickerGame4.0</string>
     <string name="title_activity_game">GameActivity</string>
     <string name="title_home">Home</string>
+
+
+
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="introduction">Kdesi ve světě kde draci sedí na svých hordách zlata a lidé s elfi a trpaslíky mezi sebou vedou nekonečné války, se na malé farmě daleko od všeho dění, snažil Prakozec vyvěštit osud. Sestoupil k němu samotný kozí bůh a předal mu poselství. Za několik let na tuto zeminsestoupí zlá bohyně Tiamat a zničí veškerý život. Jen odvážní hrdinové se ji mohou postavit.
+        Prakozec se vydal za tebbou a požádal tě aby jsi sehnal hrdiny aby se mohly postavit zlé bohyni Tiamat.</string>
 </resources>

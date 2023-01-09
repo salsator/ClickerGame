@@ -21,7 +21,7 @@ class ShopViewModel : ViewModel() {
     {
         val priceHero = Mediator.getPriceForHero(number)
 
-        return "Cena: ${System.lineSeparator()} $priceHero"
+        return "Cena: ${System.lineSeparator()}$priceHero"
 
     }
 
@@ -30,7 +30,8 @@ class ShopViewModel : ViewModel() {
         val incomeHero: String = Mediator.getIncomeHero(number)
         val countHero: String = Mediator.getCountHero(number)
 
-        return "výdělek: $incomeHero ${System.lineSeparator()} lvl hrdiny: $countHero"
+        return "výdělek: $incomeHero ${System.lineSeparator()}úroveň hrdiny: $countHero"
+        // TODO : dodělej string holder a zobrazení po koupení předchozího
     }
 
 }

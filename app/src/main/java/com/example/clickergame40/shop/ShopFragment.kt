@@ -35,7 +35,7 @@ class ShopFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this)[ShopViewModel::class.java]
-        // TODO: Use the ViewModel
+
     }
 
 

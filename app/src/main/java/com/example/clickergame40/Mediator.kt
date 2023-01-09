@@ -11,19 +11,28 @@ object Mediator {
 
     private val daysThread = DaysThread()
 
+    private var names : String = ""
 
-    private val _golds = MutableLiveData<Long>(50000)
+    private val _golds = MutableLiveData<Long>(0)
     val golds: LiveData<Long> = _golds
 
     private val _income = MutableLiveData<Long>(0)
     val income: LiveData<Long> = _income
 
-    private val _days = MutableLiveData<Int>(300)
+    private val _days = MutableLiveData<Int>(100)
     val days: LiveData<Int> = _days
 
     private val _cycle = MutableLiveData<Int>(0)
     val cycle: LiveData<Int> = _cycle
 
+    fun setName(name: String)
+    {
+        names = name
+    }
+    fun getName() : String
+    {
+        return names
+    }
 
     fun changeCycle(value: Int)
     {
@@ -53,12 +62,11 @@ object Mediator {
 
     private fun getGolds() : Long
     {
-        var gold = golds.value
-        if(gold == null)
-        {
-            gold = 0
-        }
-        return gold
+        return golds.value ?:  0
+    }
+    fun getIncome(): Long
+    {
+        return income.value ?: 0
     }
 
 
@@ -67,7 +75,6 @@ object Mediator {
         var gold = getGolds()
         gold += numberGolds
         _golds.postValue(gold)
-        //_golds.value?.plus(numberGolds)
     }
 
     fun minusGolds(numberGolds: Long)
@@ -87,6 +94,7 @@ object Mediator {
             false
         }
     }
+
 
 
 

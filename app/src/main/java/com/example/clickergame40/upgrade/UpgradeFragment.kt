@@ -1,5 +1,7 @@
 package com.example.clickergame40.upgrade
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,6 +34,7 @@ class UpgradeFragment : Fragment() {
     ): View? {
         _binding = FragmentUpgradeBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,12 +43,16 @@ class UpgradeFragment : Fragment() {
             this,
             ViewModelProvider.NewInstanceFactory()
         ).get(UpgradeViewModel::class.java)
-        // TODO: Use the ViewModel
+
+
+
     }
 
 
     override fun onResume() {
         super.onResume()
+
+        val builder = AlertDialog.Builder(getActivity())
 
         binding.clickBonusBtn.setOnClickListener {
             viewModel.buyClickBonus(0,binding.clickBonusBtn,binding.clickBonusTxt)
@@ -55,19 +62,26 @@ class UpgradeFragment : Fragment() {
             viewModel.buyClickBonus(1,binding.modBonusBtn, binding.ModBonusTxt)
         }
 
-        binding.StartWarBtn.setOnClickListener {
-           // viewModel.startWar()
-            val intent = Intent (getActivity(), ScoreActivity::class.java)
-            getActivity()?.startActivity(intent)
-        }
-
         binding.resetWorldBtn.setOnClickListener {
             viewModel.resetWorld()
         }
 
+        binding.StartWarBtn.setOnClickListener {
 
+           builder.setTitle("End Clicker Phase")
+               .setMessage("Chceš ukončit přípravu? (nelze vrátit)")
+               .setCancelable(true)
+               .setPositiveButton("Ano"){DialogInterface,it -> nextActivity()}
+               .setNegativeButton("Ne"){DialogInterface,it ->DialogInterface.cancel()}
+               .show()
+        }
     }
 
+    fun nextActivity()
+    {
+        val intent = Intent (getActivity(), ScoreActivity::class.java)
+            getActivity()?.startActivity(intent)
+    }
 
 
 

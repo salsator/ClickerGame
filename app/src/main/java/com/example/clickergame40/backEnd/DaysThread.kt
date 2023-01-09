@@ -37,21 +37,7 @@ class DaysThread() : Thread() {
         }
     }
 
-   /* override fun run() {
-            while (Mediator.getDays()>1) {
-               sleep(800)
-                Mediator.changeCycle(33)
-                sleep(800)
-                Mediator.changeCycle(66)
-                sleep(800)
-                Mediator.changeCycle(99)
-                sleep(800)
-                addUpGolds()
-                Mediator.minusDays()
-                Mediator.changeCycle(0)
 
-            }
-        }*/
 
 
 

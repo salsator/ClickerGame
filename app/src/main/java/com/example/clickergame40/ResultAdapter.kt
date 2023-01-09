@@ -24,8 +24,8 @@ class ResultAdapter( val scoreBoard: List<Winner>): RecyclerView.Adapter<ResultA
         val vysledek = scoreBoard[index]
         val context = viewHolder.view.context
 
-        viewHolder.jmenoT.text = "Jméno: ${vysledek.name}"
-        viewHolder.scoreT.text = "Score: ${vysledek.score}"
+        viewHolder.jmenoT.text = "${vysledek.name}"
+        viewHolder.scoreT.text = "${vysledek.score}"
 
 
     }

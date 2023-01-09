@@ -57,7 +57,7 @@ class GameActivity : AppCompatActivity() {
         })
 
         viewModel.mediator.cycle.observe(this, Observer {
-            binding.vyhraSilaBar.setProgress(it)
+            binding.vyhraSilaBar.progress = it
         })
     }
 

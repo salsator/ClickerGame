@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.clickergame40.Mediator
 
 class AdventureViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    // TODO: vymazat viewmodel
 
 
 

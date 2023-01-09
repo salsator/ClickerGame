@@ -11,7 +11,7 @@ class Upgrade {
     private var countMod  = 0
 
     // inceremntation click bonus
-    private var bonusClick = 100
+    private var bonusClick = 0
     private var priceBonusClick : Long = 1000
     private var basePriceBonusClick : Long = 1000
     private var countBonusClick =0
@@ -46,7 +46,7 @@ class Upgrade {
 
     fun increaseBonusClick()
     {
-        bonusClick++
+        bonusClick+= 10
         priceBonusClick = (priceBonusClick * 2.0F.pow(1+countBonusClick)).toLong()
         countBonusClick++
     }

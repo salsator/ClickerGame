@@ -2,6 +2,7 @@ package com.example.clickergame40
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.clickergame40.databinding.ActivityMainBinding
 
@@ -16,8 +17,20 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.button.setOnClickListener {
-            val i = Intent(this, GameActivity::class.java)
-            startActivity(i)
+            if (binding.jmenoEdit.text.isEmpty())
+            {
+                Toast.makeText(this,"zadej jméno", Toast.LENGTH_SHORT).show()
+
+            }
+            else
+            {
+               val name = binding.jmenoEdit.text.toString()
+                Mediator.setName(name)
+                val i = Intent(this, GameActivity::class.java)
+                startActivity(i)
+
+            }
+
         }
 
 
