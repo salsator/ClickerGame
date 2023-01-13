@@ -1,7 +1,9 @@
 package com.example.clickergame40.shop
 
 
+import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.lifecycle.ViewModel
 import com.example.clickergame40.Mediator
@@ -28,13 +30,21 @@ class ShopViewModel : ViewModel() {
     private fun getTxtString(number: Int) : String
     {
         val incomeHero: String = Mediator.getIncomeHero(number)
-        val countHero: String = Mediator.getCountHero(number)
+        val countHero: String = Mediator.getCountHero(number).toString()
         val name: String = Mediator.getHeroName(number)
 
-        return "$name${System.lineSeparator()} výdělek: $incomeHero ${System.lineSeparator()}úroveň hrdiny: $countHero"
-        // TODO : dodělej string holder a zobrazení po koupení předchozího
-    }
+        return "$name${System.lineSeparator()}výdělek: $incomeHero ${System.lineSeparator()}úroveň hrdiny: $countHero"
 
+    }
+     fun changeVisibility(number: Int, button: Button, textView: TextView, image : ImageView)
+    {
+        if((Mediator.getCountHero(number) >0) && button.visibility == View.INVISIBLE)
+        {
+            button.visibility = View.VISIBLE
+            textView.visibility = View.VISIBLE
+            image.visibility = View.VISIBLE
+        }
+    }
 
 
 }

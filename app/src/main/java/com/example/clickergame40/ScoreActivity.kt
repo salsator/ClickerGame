@@ -5,23 +5,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.clickergame40.R
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
-import com.google.firebase.ktx.Firebase
+
 
 class ScoreActivity : AppCompatActivity() {
 
     private lateinit var database: DatabaseReference
     private lateinit var winnerListArray : ArrayList<Winner>
 
-    /*val sampleResults = listOf(
-        Winner("adam","50"),
-        Winner("Někdo druhy", "20"),
-        Winner("treti", "15"),
-
-        )*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,14 +26,6 @@ class ScoreActivity : AppCompatActivity() {
 
         getWinnerData()
 
-
-
-
-        /*val resultAdapter = ResultAdapter(sampleResults)
-
-        val scoreBoard: RecyclerView = findViewById(R.id.scoreList)
-        scoreBoard.adapter = resultAdapter
-        scoreBoard.layoutManager = LinearLayoutManager(applicationContext)*/
 
     }
 
@@ -75,7 +58,11 @@ class ScoreActivity : AppCompatActivity() {
                         winnerListArray.add(winner!!)
                     }
 
-                    val resultAdapter = ResultAdapter(winnerListArray)
+
+                    val sorted = winnerListArray.sortedByDescending {
+                        it.score?.toInt()
+                    }
+                    val resultAdapter = ResultAdapter(sorted)
 
                     val scoreBoard: RecyclerView = findViewById(R.id.scoreList)
                     scoreBoard.adapter = resultAdapter

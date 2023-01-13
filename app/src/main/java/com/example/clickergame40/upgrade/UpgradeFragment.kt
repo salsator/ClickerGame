@@ -1,19 +1,14 @@
 package com.example.clickergame40.upgrade
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.clickergame40.ClickingWarActivity
-import com.example.clickergame40.GameActivity
-import com.example.clickergame40.MainActivity
-import com.example.clickergame40.ScoreActivity
+import com.example.clickergame40.*
 import com.example.clickergame40.databinding.FragmentUpgradeBinding
 
 
@@ -81,6 +76,8 @@ class UpgradeFragment : Fragment() {
                .setNegativeButton("Ne"){DialogInterface,it ->DialogInterface.cancel()}
                .show()
         }
+
+
     }
 
     fun nextActivity()

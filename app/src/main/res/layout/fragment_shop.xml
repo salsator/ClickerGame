@@ -8,18 +8,17 @@
     tools:context=".shop.ShopFragment">
 
 
-
     <TextView
-android:id="@+id/priceFarmerTxt"
-android:layout_width="0dp"
-android:layout_height="0dp"
-android:layout_marginStart="5dp"
-android:text="Farmář \nvýdělek: 0 \núroveň hrdiny: 0"
-android:textSize="20sp"
-app:layout_constraintHeight_percent="0.15"
-app:layout_constraintStart_toStartOf="parent"
-app:layout_constraintTop_toTopOf="parent"
-app:layout_constraintWidth_percent="0.4" />
+        android:id="@+id/priceFarmerTxt"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Farmář \nvýdělek: 0 \núroveň hrdiny: 0"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/buyFarmerBtn"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toEndOf="@+id/farmerImg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.4" />
 
     <Button
         android:id="@+id/buyFarmerBtn"
@@ -35,13 +34,13 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/priceFighterTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Bojovník \nvýdělek: 0 \núroveň hrdiny: 0"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/buyFighterBtn"
         app:layout_constraintHeight_percent="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fighterImg"
         app:layout_constraintTop_toBottomOf="@+id/priceFarmerTxt"
         app:layout_constraintWidth_percent="0.4" />
 
@@ -49,9 +48,9 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/buyFighterBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cena: \n300"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/buyFarmerBtn"
@@ -61,13 +60,13 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/priceRogueTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Zloděj \nvýdělek: 0 \núroveň hrdiny: 0"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/buyRogueBtn"
         app:layout_constraintHeight_percent="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rogueImg"
         app:layout_constraintTop_toBottomOf="@+id/priceFighterTxt"
         app:layout_constraintWidth_percent="0.4" />
 
@@ -76,9 +75,9 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/buyRogueBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cena: \n2 200"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/buyFighterBtn"
@@ -88,13 +87,13 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/priceWizardTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Kouzelník \nvýdělek: 0 \núroveň hrdiny: 0"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/buyWizardBtn"
         app:layout_constraintHeight_percent="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wizardImg"
         app:layout_constraintTop_toBottomOf="@+id/priceRogueTxt"
         app:layout_constraintWidth_percent="0.4" />
 
@@ -102,9 +101,9 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/buyWizardBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cena: \n20 000"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/buyRogueBtn"
@@ -114,13 +113,13 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/priceChampionTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Paladin \nvýdělek: 0 \núroveň hrdiny: 0"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/buyChampionBtn"
         app:layout_constraintHeight_percent="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/championImg"
         app:layout_constraintTop_toBottomOf="@+id/priceWizardTxt"
         app:layout_constraintWidth_percent="0.4" />
 
@@ -128,9 +127,9 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/buyChampionBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cena: \n100 000"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/buyWizardBtn"
@@ -140,9 +139,9 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/buyGodBtn"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Cena: \n9 999 999"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toBottomOf="@+id/buyChampionBtn"
@@ -152,15 +151,85 @@ app:layout_constraintWidth_percent="0.4" />
         android:id="@+id/priceGodTxt"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="Bůh \nvýdělek: 0 \núroveň hrdiny: 0"
         android:textSize="20sp"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/buyGodBtn"
         app:layout_constraintHeight_percent="0.15"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/godImg"
         app:layout_constraintTop_toBottomOf="@+id/priceChampionTxt"
         app:layout_constraintWidth_percent="0.4" />
+
+    <ImageView
+        android:id="@+id/farmerImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/farmer"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <ImageView
+        android:id="@+id/fighterImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/fighter"
+        android:visibility="invisible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/farmerImg"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <ImageView
+        android:id="@+id/rogueImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/rogue"
+        android:visibility="invisible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fighterImg"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <ImageView
+        android:id="@+id/wizardImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/wizard"
+        android:visibility="invisible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rogueImg"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <ImageView
+        android:id="@+id/championImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/champion"
+        android:visibility="invisible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wizardImg"
+        app:layout_constraintWidth_percent="0.26" />
+
+    <ImageView
+        android:id="@+id/godImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/god"
+        android:visibility="invisible"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/championImg"
+        app:layout_constraintWidth_percent="0.26" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

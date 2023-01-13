@@ -1,9 +1,10 @@
 package com.example.clickergame40.backEnd
 
-import android.provider.Settings.Global
-import android.util.Log
+
+
 import com.example.clickergame40.Mediator
 import kotlinx.coroutines.*
+
 
 
 class DaysThread() : Thread() {
@@ -21,8 +22,11 @@ class DaysThread() : Thread() {
            cycle()
             addUpGolds()
             Mediator.minusDays()
+            if(Mediator.getDays()<=1)
+            {
+            Mediator.endTrue()
+            }
             Mediator.changeCycle(0)
-
         }
 
     }

@@ -1,6 +1,6 @@
 package com.example.clickergame40.backEnd
 
-import com.example.clickergame40.Mediator
+
 
 class Heroes {
 
@@ -72,10 +72,10 @@ class Heroes {
         return income.toString()
     }
 
-    fun getHeroCount(number: Int) : String
+    fun getHeroCount(number: Int) : Int
     {
         val count : Int = arrayOfHero[number].getHeroCount()
-        return count.toString()
+        return count
     }
 
     fun getNameHero(number: Int) : String

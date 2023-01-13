@@ -25,6 +25,9 @@ object Mediator {
     private val _cycle = MutableLiveData<Int>(0)
     val cycle: LiveData<Int> = _cycle
 
+    private val _end = MutableLiveData<Boolean>(false)
+    val end: LiveData<Boolean> = _end
+
     fun setName(name: String)
     {
         names = name
@@ -123,7 +126,7 @@ object Mediator {
         return daysThread.heroes.getHeroIncome(numberHero)
     }
 
-    fun getCountHero(numberHero: Int): String {
+    fun getCountHero(numberHero: Int): Int {
         return daysThread.heroes.getHeroCount(numberHero)
     }
 
@@ -182,6 +185,11 @@ object Mediator {
     fun getHeroName(number: Int) : String
     {
         return daysThread.heroes.getNameHero(number)
+    }
+
+    fun endTrue()
+    {
+        _end.postValue(true)
     }
 }
 

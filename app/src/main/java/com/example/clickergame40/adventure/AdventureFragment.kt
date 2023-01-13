@@ -17,7 +17,7 @@ class AdventureFragment : Fragment() {
         fun newInstance() = AdventureFragment()
     }
 
-    private lateinit var viewModel: AdventureViewModel
+
     private var _binding: FragmentAdventureBinding? = null
     private val binding get() = _binding!!
 
@@ -29,11 +29,7 @@ class AdventureFragment : Fragment() {
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this)[AdventureViewModel::class.java]
-        // TODO: Use the ViewModel
-    }
+
 
 
     override fun onResume() {

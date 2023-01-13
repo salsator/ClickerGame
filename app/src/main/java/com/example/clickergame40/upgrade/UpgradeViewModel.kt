@@ -1,14 +1,10 @@
 package com.example.clickergame40.upgrade
 
 
-import android.content.Intent
 import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.ViewModel
-import com.example.clickergame40.GameActivity
 import com.example.clickergame40.Mediator
-import kotlinx.coroutines.flow.combine
 
 class UpgradeViewModel : ViewModel() {
 
@@ -45,22 +41,23 @@ class UpgradeViewModel : ViewModel() {
         button.text = "Cena: ${System.lineSeparator()} $price"
     }
 
-    fun getTxtString(number: Int,textView: TextView)
+    fun getTxtString(number: Int,textView: TextView,)
     {
          var text = ""
         var value =""
         if (number == 0)
         {
            value = Mediator.getClickBonus()
-            text = "Bonus kliku:${System.lineSeparator()}$value"
+            text = "Vylešení Zbraní${System.lineSeparator()} bonus za klik: $value"
         }
         else if (number == 1)
         {
             value = Mediator.getModBonus()
-            text = "bonus k výdělku:${System.lineSeparator()}$value"
+            text = "Vylepšení zbroje${System.lineSeparator()}bonus k výdělku: $value"
         }
         textView.text = text
     }
+
 
 
     fun resetWorld()
